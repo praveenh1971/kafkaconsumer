@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+sourceSets{
+    main {
+        java {
+            'src/main/java'
+        }
+    }
+}
+task hello{
+    ArrayList<String> s = new ArrayList<String>();
+    s << "sss"
+    s << "sdddd"
+    int[] arr = [1,23, 333, 3]
+    s.forEach{it + "dedde"}
+    println s;
+}
+dependencies {
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation group: 'org.apache.kafka', name: 'kafka_2.13', version: '2.7.1'
+    implementation group: 'org.apache.kafka', name: 'kafka-streams', version: '2.7.1'
+}
+
+test {
+    useJUnitPlatform()
+}
